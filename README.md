@@ -38,3 +38,11 @@ select CITY, length(CITY) from station order by length(CITY), city limit 1; sele
 ```
 select distinct city from station where city like 'a%' or city like 'e%' or city like 'i%' or city like 'o%' or city like 'u%'
 ```
+
+- Query the list of CITY names from STATION that starts and ends with vowels. Your result cannot contain duplicates.
+
+#### regular expression is better
+
+```
+SELECT DISTINCT CITY FROM STATION WHERE CITY REGEXP '^[AEIOU][A-Z \s]*[AEIOU]$';
+```
